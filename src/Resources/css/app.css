@@ -40,7 +40,7 @@ a {
 .signin_wrapper input {
     background: #fafafa;
     border: 1px solid #e9e9e9;
-    font-size: 17px;
+    font-size: 14px;
     padding: 8px;
     border-radius: 3px;
     font-family: Roboto;
@@ -700,19 +700,20 @@ footer .footer_discl {
 }
 
 .signin_wrapper form {
-    width: 350px;
+    width: 250px;
     margin: 0 auto;
 }
 
 .signin_wrapper form button {
     width: 100%;
     padding: 10px;
+    font-size: 14px;
 }
 
 .signin_wrapper h2 {
     font-family: 'Righteous', cursive;
     color: #98c6e9;
-    font-size: 50px;
+    font-size: 35px;
 }
 
 .user_dashboard {
