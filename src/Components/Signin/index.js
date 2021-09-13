@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
+import { firebase } from '../../firebase';
 import {CircularProgress} from '@material-ui/core'
 import {Redirect} from 'react-router-dom';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
+import {showToastError, showToastSuccess} from '../Utils/utils'
 
-
-const SignIn = () => {
+const SignIn = (props) => {
     const [loading, setLoading] = useState(false)
 
     const formik = useFormik({
         initialValues:{
-            email:'',
-            password:''
+            email:'man_city@gmail.com',
+            password:'man_city321'
         },
 
         validationSchema: Yup.object({
@@ -26,25 +27,46 @@ const SignIn = () => {
 
         onSubmit:(values)=>{
             setLoading(true)
-            console.log(values)
             // go to server with field values
+            submitForm(values)
         }
     })
+
+    const submitForm = (values) => {
+        firebase.auth().signInWithEmailAndPassword(
+            values.email,
+            values.password
+        ).then(()=>{
+            // show success toast
+            showToastSuccess('Welcome!');
+
+            // redirect the user
+            props.history.push('/dashboard')
+
+        }).catch(error=>{
+            setLoading(false);
+           
+            // show error toast
+            showToastError("Wrong username or password");
+        })
+    }
+
 
     return (
         <div className="container">
             <div className="signin_wrapper" stylele={{margin: '100px'}}>
                 <form onSubmit={formik.handleSubmit}>
-                    <h2>Please login</h2>
+                    <h2>Please sign in</h2>
                     <input
                         name="email"
-                        placeholder="Email"
+                        placeholder="Enter your email"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.email}
                     />
 
                     <input
+                        placeholder="Enter your password"
                         name="password"
                         type="password"
                         onChange={formik.handleChange}

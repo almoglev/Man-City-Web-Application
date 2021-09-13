@@ -1,10 +1,22 @@
 import React from "react";
-import {AppBar, Toolbar, Button} from '@material-ui/core'
+import {AppBar, Toolbar, Button} from '@material-ui/core';
 import { Link } from "react-router-dom";
-import { CityLogo } from '../Utils/utils'
+import { CityLogo } from '../Utils/utils';
+import {firebase} from '../../firebase';
+import { showToastError, showToastSuccess } from "../Utils/utils";
 
 
-const Header = () => {
+const Header = ({user}) => {
+
+    const signoutHandler = ()=>{
+        firebase.auth().signOut()
+        .then(()=>{
+            showToastSuccess("Signed out")
+        }).catch(error=>{
+            alert(error.message)
+        })
+    }
+
     return(
         <AppBar
             position="fixed"
@@ -35,9 +47,19 @@ const Header = () => {
                     <Button color="inherit">Matches</Button>
                 </Link>
 
-                <Link to="/dashboard">
-                    <Button color="inherit">Dashboard</Button>
-                </Link>
+                {user ?
+                    <>
+                        <Link to="/dashboard">
+                            <Button color="inherit">Dashboard</Button>
+                        </Link>
+
+                        <Button color="inherit"
+                            onClick={()=> signoutHandler()}>Sign out</Button>
+                    </>
+                :
+                null
+                }
+
 
             </Toolbar>
 
