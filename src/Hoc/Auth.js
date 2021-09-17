@@ -14,7 +14,7 @@ const AuthGuard = (Component) => {
             if (user) {
                 return <Component {...this.props}/>
             } else {
-                return <Redirect to="/sign_in"/>
+                return <Redirect to="/"/>
             }
         }
 

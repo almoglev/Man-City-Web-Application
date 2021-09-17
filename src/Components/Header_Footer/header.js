@@ -47,7 +47,9 @@ const Header = ({user}) => {
                             onClick={()=> signoutHandler()}>Sign out</Button>
                     </>
                 :
-                null
+                        <Link to="/sign_in">
+                            <Button color="inherit">Sign in</Button>
+                        </Link>
                 }
 
 

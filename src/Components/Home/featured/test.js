@@ -8,6 +8,32 @@ const Test = () => {
 
     return(
         <>
+
+            <button
+                onClick={()=>{
+                    setBck('#f44336')
+                }}
+            >
+                Update
+            </button>
+
+            <button
+                onClick={()=>{
+                    setShow(false)
+                }}
+            >
+                Remove
+            </button>
+
+            
+            <button
+                onClick={()=>{
+                    setShow(true)
+                }}
+            >
+                Show
+            </button>
+
             <Animate
                 show={show}
                 start={{
@@ -24,10 +50,59 @@ const Test = () => {
                     opacity: [1],
                     timing: {
                         duration: 1000,
-                        delay: 200
-                    },
-                    ease: easePolyOut
+                        delay: 200,
+                        ease: easePolyOut
+                    }
                 }}
+
+                update={{
+                    backgroundColor: bck,
+                    opacity:[0.5],
+                    timing: {
+                        duration: 2000,
+                        ease: easePolyOut
+                    },
+                    // callback functions:
+                    events:{
+                        start:()=>{
+                            console.log('STARTED')
+                        },
+                        end:()=>{
+                            console.log('ENDED')
+                        },
+                        interrupt:()=>{
+                            // some logic
+                        }
+                    }
+                }}
+
+                // leave={{
+                //     width:[1000],
+                //     opacity:[0],
+                //     timing: {
+                //         duration: 500,
+                //         ease: easePolyOut
+                //     }
+                // }}
+
+                leave={
+                [
+                    {
+                        width:[1000],
+                        timing: {
+                            duration: 500,
+                            ease: easePolyOut
+                        }
+                    },
+                    {
+                        opacity:[0],
+                        timing: {
+                            delay: 2000,
+                            duration: 3000,
+                            ease: easePolyOut
+                        }
+                    }
+                ]}
             >
                 {({width, height,opacity,backgroundColor})=>(
                     <div

@@ -188,15 +188,15 @@ footer .footer_discl {
 
 
 .featured_stripes .stripe {
-    width: 230px;
-    height: 1200px;
+    width: 170px;
+    height: 900px;
     position: absolute;
 }
 
 .featured_number {
-    font-size: 270px;
+    font-size: 180px;
     color: #ffffff;
-    transform: translate(260px,170px);
+    transform: translate(280px, 130px);
     position: absolute;
 }
 
@@ -211,7 +211,7 @@ footer .footer_discl {
     position: absolute;
     background: #0e1731;
     color: #ffffff;
-    font-size: 92px;
+    font-size: 60px;
     text-transform: uppercase;
     padding: 0px 20px;
 }
@@ -220,7 +220,7 @@ footer .footer_discl {
     position: absolute;
     background: #0e1731;
     color: #ffffff;
-    font-size: 92px;
+    font-size: 60px;
     text-transform: uppercase;
     padding: 0px 20px;
 }
