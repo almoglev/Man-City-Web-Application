@@ -3,7 +3,10 @@
 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-;
+import 'firebase/compat/firestore';
+
+
+// import {cityDb} from './temp/m-city-export';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBVda_CD_oJpTGYX6S42iupDAlzufgcjRk",
@@ -18,6 +21,39 @@ const firebaseConfig = {
   // Initialize Firebase
   const app = firebase.initializeApp(firebaseConfig);
 
+  // Inserting the data (collections) from m-city-export.js into firebase
+  const DB = firebase.firestore();
+  const matchesCollection = DB.collection('matches');
+  const playersCollection = DB.collection('players');
+  const positionsCollection = DB.collection('positions');
+  const promotionsCollection = DB.collection('promotions');
+  const teamsCollection = DB.collection('teams');
+
+//   cityDb.matches.forEach(item=>{
+//     matchesCollection.add(item)
+//   });
+
+//   cityDb.players.forEach(item=>{
+//     playersCollection.add(item)
+//   });
+
+//   cityDb.positions.forEach(item=>{
+//     positionsCollection.add(item)
+//   });
+
+//   cityDb.promotions.forEach(item=>{
+//     promotionsCollection.add(item)
+//   });
+
+//   cityDb.teams.forEach(item=>{
+//     teamsCollection.add(item)
+//   });
+
   export {
-      firebase
+      firebase,
+      matchesCollection,
+      playersCollection,
+      positionsCollection,
+      promotionsCollection,
+      teamsCollection
   }
