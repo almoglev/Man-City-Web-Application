@@ -2,20 +2,10 @@ import React from "react";
 import {AppBar, Toolbar, Button} from '@material-ui/core';
 import { Link } from "react-router-dom";
 import { CityLogo } from '../Utils/utils';
-import {firebase} from '../../firebase';
-import { showToastError, showToastSuccess } from "../Utils/utils";
+import { signoutHandler } from '../Utils/utils';
 
 
 const Header = ({user}) => {
-
-    const signoutHandler = ()=>{
-        firebase.auth().signOut()
-        .then(()=>{
-            showToastSuccess("Signed out")
-        }).catch(error=>{
-            alert(error.message)
-        })
-    }
 
     return(
         <AppBar
@@ -23,7 +13,7 @@ const Header = ({user}) => {
             style={{
                 backgroundColor: '#98c5e9',
                 boxShadow:'none',
-                // padding:'10px 0px',
+                padding:'11px 0px',
                 borderBottom:'1px solid #00285e'
             }}
         >

@@ -53,50 +53,57 @@ const SignIn = (props) => {
 
 
     return (
-        <div className="container">
-            <div className="signin_wrapper" stylele={{margin: '100px'}}>
-                <form onSubmit={formik.handleSubmit}>
-                    <h2>Please sign in</h2>
-                    <input
-                        name="email"
-                        placeholder="Enter your email"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.email}
-                    />
+        <>
+            { !props.user ?
+                <div className="container">
+                    <div className="signin_wrapper" stylele={{margin: '100px'}}>
+                        <form onSubmit={formik.handleSubmit}>
+                            <h2>Please sign in</h2>
+                            <input
+                                name="email"
+                                placeholder="Enter your email"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.email}
+                            />
 
-                    <input
-                        placeholder="Enter your password"
-                        name="password"
-                        type="password"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.password}
-                    />
-                    
-                    { loading ? 
-                        <CircularProgress color="primary" className="progress"/>
-                    :   
-                        <button type="submit">Log in</button>
-                    }
+                            <input
+                                placeholder="Enter your password"
+                                name="password"
+                                type="password"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.password}
+                            />
+                            
+                            { loading ? 
+                                <CircularProgress color="primary" className="progress"/>
+                            :   
+                                <button type="submit">Log in</button>
+                            }
 
-                    {/* validating */}
-                    {formik.touched.email && formik.errors.email ?
-                        <div className="error_label">
-                            {formik.errors.email}
-                        </div>
-                    : null}
+                            {/* validating */}
+                            {formik.touched.email && formik.errors.email ?
+                                <div className="error_label">
+                                    {formik.errors.email}
+                                </div>
+                            : null}
 
-                    {formik.touched.password && formik.errors.password ?
-                        <div className="error_label">
-                            {formik.errors.password}
-                        </div>
-                    : null}
+                            {formik.touched.password && formik.errors.password ?
+                                <div className="error_label">
+                                    {formik.errors.password}
+                                </div>
+                            : null}
 
-                </form>
+                        </form>
 
-            </div>
-        </div>
+                    </div>
+                </div>
+            :
+                <Redirect to={'/'}/>
+            }
+        </>
+
     )
 }
 

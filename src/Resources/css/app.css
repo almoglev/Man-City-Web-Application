@@ -172,7 +172,7 @@ footer .footer_discl {
 
 .featured_wrapper {
     margin: 0 auto;
-    width: 1280px;
+    width: 1260px;
     margin-top: 90px;
     height: 800px;
     overflow: hidden;
@@ -604,6 +604,7 @@ footer .footer_discl {
     flex-grow: 1;
     padding:20px;
 }
+
 .admin_container  .admin_progress {
     text-align: center;
     margin: 20px 0px;
@@ -623,7 +624,7 @@ footer .footer_discl {
     margin: 0px 0px 50px 0px;
     border-bottom: 1px solid #dbdbdb;
     color: #414141;
-    font-size: 40px;
+    font-size: 30px;
 }
 
  
@@ -717,7 +718,7 @@ footer .footer_discl {
 }
 
 .user_dashboard {
-    font-size: 60px;
+    font-size: 45px;
     font-family: 'Righteous', cursive;
     color: #d5ebfe;
     text-align: center;
