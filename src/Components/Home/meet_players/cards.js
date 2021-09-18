@@ -1,7 +1,6 @@
 import React from "react";
 import Animate from 'react-move/Animate';
 import {easePolyOut} from 'd3-ease';
-import { Home } from "@material-ui/icons";
 
 import Otamendi from '../../../Resources/images/players/Otamendi.png';
 import Sterling from '../../../Resources/images/players/Raheem_Sterling.png';

@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import {Link,Redirect} from 'react-router-dom';
 import { toast } from 'react-toastify';
 import {firebase} from '../../firebase';
 
@@ -50,6 +50,10 @@ export const signoutHandler = ()=>{
     }).catch(error=>{
         alert(error.message)
     })
+
+    return(
+        <Redirect to="/"/>
+    )
 }
 
 

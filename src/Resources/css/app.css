@@ -402,7 +402,7 @@ footer .footer_discl {
 
 .home_meetplayers_wrapper {
     padding-bottom: 100px;
-    min-height: 600px;
+    min-height: 480px;
 }
 
 .home_meetplayers .home_card_wrapper {
@@ -481,8 +481,9 @@ footer .footer_discl {
 .promotion_wrapper .promotion_animation .left { 
     text-transform: uppercase;
     text-transform: uppercase;
-    font-size: 150px;
+    font-size: 100px;
     font-family: 'Righteous', cursive;
+    text-align: center;
     flex-grow: 1;
     color:#d5ebfd;
     line-height: 135px;
@@ -514,13 +515,13 @@ footer .footer_discl {
 .promotion_wrapper .enroll_discl {
     font-weight: 300;
     font-size: 12px;
-    width: 271px;
+    width: 220px;
     margin: 0 auto;
     padding: 10px 0px;
 }
 
 .promotion_wrapper .enroll_input {
-    width: 330px;
+    width: 230px;
     margin: 0 auto;
     padding: 10px 0px;
 }
