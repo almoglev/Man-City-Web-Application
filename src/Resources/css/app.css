@@ -174,7 +174,7 @@ footer .footer_discl {
     margin: 0 auto;
     width: 1260px;
     margin-top: 90px;
-    height: 800px;
+    height: 522px;
     overflow: hidden;
 }
 
@@ -264,6 +264,7 @@ footer .footer_discl {
 .match_block .match_wrapper .match_top,
 .match_block .match_wrapper .match_bottom {
     display: flex;
+    width: 400px;
 }
 .match_block .match_wrapper .match_bottom {
     margin-top: 5px;
@@ -275,33 +276,33 @@ footer .footer_discl {
     font-family: 'Righteous', cursive;
     flex-grow: 1;
     margin-right: 5px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .match_block .match_wrapper .match_top .left div,
 .match_block .match_wrapper .match_bottom .left div {
-    float:left
+    float:left;
 }
 
 .match_block .match_wrapper .match_top .left .icon,
 .match_block .match_wrapper .match_bottom .left .icon {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background-size: cover !important;
 }
 .match_block .match_wrapper .match_top .left .team_name,
 .match_block .match_wrapper .match_bottom .left .team_name {
-    font-size: 30px;
-    padding: 6px 10px;
+    font-size: 22px;
+    padding: 1px 10px;
 }
 
 
 .match_block .match_wrapper .match_top .right,
 .match_block .match_wrapper .match_bottom .right { 
     background: #0e1731;
-    width: 70px;
+    width: 60px;
     color: #ffffff;
-    font-size: 50px;
+    font-size: 24px;
     text-align: center;
     padding-top: 6px;
 } 
@@ -424,14 +425,14 @@ footer .footer_discl {
 .player_card_wrapper {
     background: #ffffff;
     border: 1px solid #ececec;
-    width: 300px;
+    width: 220px;
     padding: 10px 10px 20px 10px;
     font-family: 'Righteous';
 }
 .player_card_wrapper .player_card_thmb {
     border: 1px solid #eeeeee;
     width:100%;
-    height:250px;
+    height:220px;
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-size: contain !important;
@@ -442,9 +443,9 @@ footer .footer_discl {
 }
 .player_card_wrapper .player_card_number {
     color: #d6ecfe;
-    font-size: 185px;
+    font-size: 115px;
     text-align: right;
-    line-height: 160px;
+    line-height: 110px;
 }
 
 .player_card_wrapper .player_card_name {
@@ -454,7 +455,7 @@ footer .footer_discl {
 
 .player_card_wrapper .player_card_name span { 
     display: block;
-    font-size: 25px;
+    font-size: 20px;
     color: #0d1831;
 }
 
