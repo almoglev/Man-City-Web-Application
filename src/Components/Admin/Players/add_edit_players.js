@@ -1,5 +1,7 @@
 import React, { useEffect, useState} from "react";
 import AdminLayout from "../../../Hoc/AdminLayout";
+import FilesUploader from '../../Utils/file_uploader';
+
 
 import { useFormik } from "formik";
 import * as Yup from 'yup';
@@ -12,13 +14,16 @@ const defaultValues = {
     name:'',
     lastname:'',
     number:'',
-    position:''
+    position:'',
+    image: ''
 }
 
 const AddEditPlayer = (props) => {
-    const [loading, setLoading] = useState(false)
-    const [formType, setFormType] = useState('')
-    const [values, setValues] = useState(defaultValues)
+    const [loading, setLoading] = useState(false);
+    const [formType, setFormType] = useState('');
+    const [values, setValues] = useState(defaultValues);
+    const [defaultImg, setDefaultImg] = useState('');
+
 
     const formik = useFormik({
         enableReinitialize:true,
@@ -33,6 +38,8 @@ const AddEditPlayer = (props) => {
             .min(0,'The minimum is zero')
             .max(100,'The max is 100'),
             position: Yup.string()
+            .required('This input is required'),
+            image: Yup.string()
             .required('This input is required')
         }),
         onSubmit: (values) => {
@@ -80,6 +87,17 @@ const AddEditPlayer = (props) => {
                 
                 // found player in the database
                 if (snapshot.data()){         
+                    // show the image of the player from the database
+                    firebase.storage().ref('players')
+                    .child(snapshot.data().image).getDownloadURL()
+                    .then(url=>{                        
+                        // update formik
+                        updateImageName(snapshot.data().image)
+
+                        // update the default image
+                        setDefaultImg(url)
+                    });
+
                     // set form type to edit
                     setFormType('edit');
                     setValues(snapshot.data());
@@ -97,13 +115,30 @@ const AddEditPlayer = (props) => {
 
     },[props.match.params.playerid])
 
+    const updateImageName = (filename) => {
+        formik.setFieldValue('image', filename)
+    }
+
+    const resetImage = () => {
+        formik.setFieldValue('image','');
+        setDefaultImg('');
+    }
 
     return(
         <AdminLayout title={formType==='add' ? 'Add Player' : 'Edit Player'}>
             <div className="editmatch_dialog_wrapper">
                 <div>
                     <form onSubmit={formik.handleSubmit}>
-                        image
+                        <FormControl error={selectIsError(formik, 'image')}>
+                            <FilesUploader
+                                dir="players"
+                                defaultImg={defaultImg} // image url
+                                defaultImgName={formik.values.image} // name of file
+                                filename={(filename)=>updateImageName(filename)}
+                                resetImage={()=>resetImage()}
+                            />
+                            {selectErrorHelper(formik, 'image')}
+                        </FormControl>
                         
                         <hr/>
                         

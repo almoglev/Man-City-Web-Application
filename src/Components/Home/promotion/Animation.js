@@ -15,9 +15,7 @@ const Animation = () => {
             
             <div className="right">
                 <Zoom>
-                    <div className="jersey">
-
-                    </div>
+                    <div className="jersey"/>
                 </Zoom>
             </div>
         </div>
