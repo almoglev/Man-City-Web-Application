@@ -75,7 +75,7 @@ const AdminPlayers = () => {
                     setLoading(false)
                 })
         } else {
-            showToastError("Nothing to load")
+            showToastError("Sorry, nothing to load")
         }
     }
 
