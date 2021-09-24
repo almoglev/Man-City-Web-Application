@@ -7,6 +7,7 @@ import Footer from './Components/Header_Footer/footer';
 import Header from './Components/Header_Footer/header';
 import Home from './Components/Home';
 import SignIn from './Components/Signin';
+import TheTeam from './Components/The_Team';
 
 import AuthGuard from './Hoc/Auth';
 import Dashboard from './Components/Admin/Dashboard';
@@ -26,7 +27,9 @@ const Routes = ({user}) => {
         <Route path="/admin_players/add_player" exact component={AuthGuard(AddEditPlayer)}/>
         <Route path="/admin_players/edit_player/:playerid" exact component={AuthGuard(AddEditPlayer)}/>
         <Route path="/admin_players" exact component={AuthGuard(AdminPlayers)}/>
-        <Route path="/dashboard" exact component={AuthGuard(Dashboard)}/>
+        
+        <Route path="/dashboard" component={AuthGuard(Dashboard)}/>
+        <Route path="/the_team" component={TheTeam}/>
         <Route path="/sign_in" exact component={
           props=>(<SignIn {...props} user={user}/>)
         

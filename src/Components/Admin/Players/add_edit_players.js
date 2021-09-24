@@ -211,7 +211,7 @@ const AddEditPlayer = (props) => {
                             {formType === 'add' ?
                                 'Add Player'
                             :
-                                'Edit Player'
+                                'Update Player'
                             }
 
                         </Button>
