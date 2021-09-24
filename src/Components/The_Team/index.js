@@ -11,12 +11,13 @@ import { CircularProgress } from "@material-ui/core";
 const TheTeam = () => {
 
     const [loading, setLoading] = useState(true);
-    const [players, setPlayers] = useState(null);
+    const [players, setPlayers] = useState([]);
 
     useEffect(()=>{
         // if players list is empty, load them. NOTICE: snapshot.docs does not contain the image URL!
         // we need to add it to each player separately
-        if(!players){
+        console.log(players)
+        if(players.length == 0){
             playersCollection
             .get()
             .then( snapshot => {
