@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { CircularProgress } from '@material-ui/core';
 
-import { FormikConsumer, useField, useFormik  } from 'formik';
+import { useFormik  } from 'formik';
 import * as Yup from 'yup';
 
 import { showToastError, showToastSuccess} from '../../Utils/utils'

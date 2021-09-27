@@ -9,7 +9,7 @@ const Blocks = () => {
 
     useEffect(()=>{
         // we want to load the matches from firebase just once, so load only if it's empty
-        if(matches.length == 0){
+        if(matches.length === 0){
             matchesCollection.get().then( snapshot => {
                 // getting the data from firebase (it's stored in an object called snapshot)
                 const matches = snapshot.docs.map(doc=>({

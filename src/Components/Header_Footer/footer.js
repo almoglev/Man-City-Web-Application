@@ -14,7 +14,7 @@ const Footer = () => {
             </div>
 
             <div className="footer_descl">
-                Manchester City 2021. &copy; All rights reserved
+                Manchester City 2021 &copy; All rights reserved
             </div>
         </footer>
     )

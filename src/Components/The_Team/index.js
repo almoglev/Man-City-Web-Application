@@ -17,7 +17,7 @@ const TheTeam = () => {
         // if players list is empty, load them. NOTICE: snapshot.docs does not contain the image URL!
         // we need to add it to each player separately
         console.log(players)
-        if(players.length == 0){
+        if(players.length === 0){
             playersCollection
             .get()
             .then( snapshot => {

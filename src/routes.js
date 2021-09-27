@@ -8,6 +8,7 @@ import Header from './Components/Header_Footer/header';
 import Home from './Components/Home';
 import SignIn from './Components/Signin';
 import TheTeam from './Components/The_Team';
+import TheMatches from './Components/The_Matches';
 
 import AuthGuard from './Hoc/Auth';
 import Dashboard from './Components/Admin/Dashboard';
@@ -36,6 +37,7 @@ const Routes = ({user}) => {
         
         <Route path="/dashboard" component={AuthGuard(Dashboard)}/>
         <Route path="/the_team" component={TheTeam}/>
+        <Route path="/matches" component={TheMatches}/>
         <Route path="/sign_in" exact component={
           props=>(<SignIn {...props} user={user}/>)
         

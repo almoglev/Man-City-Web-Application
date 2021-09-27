@@ -14,7 +14,7 @@ import {
     CircularProgress
 } from '@material-ui/core';
 
-import { showToastError, showToastSuccess } from '../../Utils/utils';
+import { showToastError } from '../../Utils/utils';
 
 const AdminPlayers = () => {
     

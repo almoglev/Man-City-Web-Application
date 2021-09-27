@@ -6,10 +6,9 @@ import * as Yup from "yup";
 
 import { showToastError, showToastSuccess, textErrorHelper, selectErrorHelper, selectIsError
 } from "../../Utils/utils";
-import { TextField, Select, MenuItem, FormControl, Button, Menu } from "@material-ui/core";
+import { TextField, Select, MenuItem, FormControl, Button } from "@material-ui/core";
 
 import { matchesCollection, teamsCollection } from "../../../firebase";
-import { Update } from "@material-ui/icons";
 
 
 const defaultValues={
