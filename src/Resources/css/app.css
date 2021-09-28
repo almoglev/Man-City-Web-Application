@@ -138,12 +138,12 @@ button {
 
 .not_found_container {
     text-align: center;
-    margin-top: 96px;
+    margin-top: 160px;
     padding: 20px;
     background-size: 5px 5px !important;
     min-height: 100vh;
     text-align: center;
-    font-size: 90px;
+    font-size: 50px;
     font-family: 'Righteous', cursive;
     color: #d5ebfe;
 }
@@ -337,8 +337,8 @@ footer .footer_discl {
 
 .match_box_big .block .team,
 .match_box_big .block .result {
-    font-size: 21px;
-    line-height: 51px;
+    font-size: 16px;
+    line-height: 38px;
     margin-left: 18px;
     font-weight: 300;
 }
@@ -352,6 +352,7 @@ footer .footer_discl {
     height: 102px;
     padding-left: 10px;
     font-weight: 300;
+    font-size: 15px;
     color: #5e5e5e;
 }
 

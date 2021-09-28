@@ -102,7 +102,7 @@ const TheMatches = () => {
 
                                 <div className="match_filters_box">
                                 <div align="center" className="tag">
-                                        Results
+                                        Result
                                     </div>
                                     <div className="cont">
                                         <div className={`option ${state.resultFilter === 'All' ? 'active': ''}`}
@@ -138,6 +138,7 @@ const TheMatches = () => {
                                     </div>
                                 </div>
                             </div>
+                            <MatchesList matches={state.filterMatches}/>
                         </div>
 
                         <div className="right">
