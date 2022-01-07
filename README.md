@@ -1,5 +1,5 @@
 # Web Application - Manchester City
-👉 Click on [https://man-city-51674.web.app/](https://man-city-51674.web.app/) for live demo!
+👉 [Click here](https://man-city-51674.web.app/) for live demo!
 
 ## Installation:
 Clone this repository to your local machine and run:
